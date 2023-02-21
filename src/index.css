@@ -20,6 +20,15 @@ body {
   font-family: var(--font-roboto);
 }
 
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .todoTitleHeader {
   text-align: center;
   margin-top: 2rem;
@@ -28,7 +37,6 @@ body {
 }
 
 .todoContainer {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,14 +46,14 @@ body {
 
 .todoCreateForm {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  gap: 1rem;
 }
 
 .todoInput {
   border: 0.125rem solid var(--color-border);
   outline: none;
-  width: 18.75rem;
+  width: 300px;
   padding: 0.6rem;
   font-size: 1rem;
   border-radius: 0.5rem;
@@ -64,6 +72,16 @@ body {
   transition: all 0.5s ease;
 }
 
+@media (max-width: 705px) {
+  .todoCreateForm {
+    flex-direction: column;
+  }
+
+  .buttonCreate {
+    width: 100%;
+  }
+}
+
 .buttonCreate:hover {
   background-color: var(--color-white);
   color: var(--color-border);
@@ -71,7 +89,7 @@ body {
 }
 
 .todosContainer {
-  width: 43.75rem;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +98,6 @@ body {
 }
 
 .todo {
-  width: 90%;
   display: flex;
   justify-content: center;
 }
@@ -96,6 +113,30 @@ body {
   font-weight: 700;
 }
 
+@media (max-width: 555px) {
+  .todo:not(first-child) {
+    border-top: 0.0625rem solid var(--color-border);
+    padding-top: 0.5rem;
+  }
+
+  .todo:first-child {
+    border: none;
+  }
+
+  .todoInfo {
+    width: 300px;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.todoContainerButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .todoButton {
   display: flex;
   align-items: center;
@@ -104,6 +145,12 @@ body {
   color: var(--color-white);
   border-radius: 0.375rem;
   transition: all 0.5s ease;
+}
+
+@media (max-width: 555px) {
+  .todoButton {
+    background-color: #1d2939;
+  }
 }
 
 .todoButtonEdit {
@@ -135,7 +182,7 @@ body {
 }
 
 .todoUpdateInput {
-  width: 18.75rem;
+  width: 300px;
   padding: 0.6rem 0.2rem;
   font-size: 1rem;
   font-weight: 700;
@@ -144,6 +191,19 @@ body {
   border: none;
   border-bottom: 2px solid var(--color-border);
   font-family: var(--font-roboto);
+}
+
+@media (max-width: 555px) {
+  .todoUpdateForm {
+    width: 300px;
+  }
+
+  .todoUpdateInput {
+    width: 100%;
+  }
+  .todoUpdateForm {
+    flex-direction: column;
+  }
 }
 
 .todoError {
@@ -157,6 +217,12 @@ body {
   text-transform: uppercase;
 }
 
+@media (max-width: 775px) {
+  .todoError {
+    width: 100%;
+  }
+}
+
 .todosTitleAdd {
   font-weight: 900;
   font-size: 1.2rem;
@@ -165,3 +231,13 @@ body {
 .todosSubtitle {
   color: var(--color-indigo);
 }
+
+/*
+
+
+
+
+
+
+
+*/

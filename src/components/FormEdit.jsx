@@ -33,18 +33,20 @@ const FormEdit = ({ item, onUpdate, setIsEdit }) => {
           onChange={handleChange}
           value={newValue}
         />
-        <button
-          className="todoButton todoButtonEdit"
-          onClick={handleClickUpdateTodo}
-        >
-          <RiSaveLine /> Actualizar
-        </button>
-        <button
-          className="todoButton todoButtonDelete"
-          onClick={handleClickCancelTodo}
-        >
-          <GiCancel /> Cancelar
-        </button>
+        <div className="todoContainerButtons">
+          <button
+            className="todoButton todoButtonEdit"
+            onClick={handleClickUpdateTodo}
+          >
+            <RiSaveLine /> Actualizar
+          </button>
+          <button
+            className="todoButton todoButtonDelete"
+            onClick={handleClickCancelTodo}
+          >
+            <GiCancel /> Cancelar
+          </button>
+        </div>
       </form>
     </>
   );

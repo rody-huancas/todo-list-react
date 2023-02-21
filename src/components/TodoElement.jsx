@@ -9,18 +9,20 @@ const TodoElement = ({ item, onDelete, setIsEdit }) => {
     <>
       <div className="todoInfo">
         <div className="todoTitle">{item.title}</div>
-        <button
-          className="todoButton todoButtonEdit"
-          onClick={() => setIsEdit(true)}
-        >
-          <FiEdit3 /> Editar
-        </button>
-        <button
-          className="todoButton todoButtonDelete"
-          onClick={(e) => onDelete(item.id)}
-        >
-          <MdDeleteOutline /> Eliminar
-        </button>
+        <div className="todoContainerButtons">
+          <button
+            className="todoButton todoButtonEdit"
+            onClick={() => setIsEdit(true)}
+          >
+            <FiEdit3 /> Editar
+          </button>
+          <button
+            className="todoButton todoButtonDelete"
+            onClick={(e) => onDelete(item.id)}
+          >
+            <MdDeleteOutline /> Eliminar
+          </button>
+        </div>
       </div>
     </>
   );
