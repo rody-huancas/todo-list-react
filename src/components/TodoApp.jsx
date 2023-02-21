@@ -44,7 +44,12 @@ const TodoApp = () => {
     <>
       <div className="todoContainer">
         <form className="todoCreateForm" onSubmit={handleSubmit}>
-          <input onChange={handleChange} className="todoInput" value={title} />
+          <input
+            onChange={handleChange}
+            className="todoInput"
+            value={title}
+            placeholder="Ingrese su tarea"
+          />
           <input
             onClick={handleSubmit}
             type="submit"

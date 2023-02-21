@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+// iconos
+import { RiSaveLine } from "react-icons/ri";
+import { GiCancel } from "react-icons/gi";
+
 const FormEdit = ({ item, onUpdate, setIsEdit }) => {
   const [newValue, setNewValue] = useState(item.title);
 
@@ -16,12 +20,30 @@ const FormEdit = ({ item, onUpdate, setIsEdit }) => {
     onUpdate(item.id, newValue);
     setIsEdit(false);
   };
+
+  const handleClickCancelTodo = () => {
+    setIsEdit(false);
+  };
   return (
     <>
       <form className="todoUpdateForm" onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} value={newValue} />
-        <button className="button" onClick={handleClickUpdateTodo}>
-          Actualizar
+        <input
+          className="todoUpdateInput"
+          type="text"
+          onChange={handleChange}
+          value={newValue}
+        />
+        <button
+          className="button todoButtonEdit"
+          onClick={handleClickUpdateTodo}
+        >
+          <RiSaveLine /> Actualizar
+        </button>
+        <button
+          className="button todoButtonDelete"
+          onClick={handleClickCancelTodo}
+        >
+          <GiCancel /> Cancelar
         </button>
       </form>
     </>
