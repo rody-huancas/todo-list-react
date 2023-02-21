@@ -90,14 +90,21 @@ const TodoApp = () => {
         </form>
 
         <div className="todosContainer">
-          {todos.map((item) => (
-            <Todo
-              key={item.id}
-              item={item}
-              onUpdate={handelUpdate}
-              onDelete={handleDelete}
-            />
-          ))}
+          {todos.length === 0 ? (
+            <p className="todosTitleAdd">
+              ¡Agrega tus tareas!{" "}
+              <span className="todosSubtitle">y se mostrarán aquí</span>.
+            </p>
+          ) : (
+            todos.map((item) => (
+              <Todo
+                key={item.id}
+                item={item}
+                onUpdate={handelUpdate}
+                onDelete={handleDelete}
+              />
+            ))
+          )}
         </div>
       </div>
     </>

@@ -6,6 +6,7 @@
   --color-white: #fff;
   --color-edit: #3e58e8;
   --color-delete: #ff0000;
+  --color-indigo: #7c3aed;
   --font-roboto: "Roboto", sans-serif;
 }
 
@@ -24,7 +25,7 @@ body {
   margin-top: 2rem;
   color: var(--color-text);
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .todoContainer {
@@ -155,4 +156,13 @@ body {
   font-weight: 900;
   border-radius: 0.625rem;
   text-transform: uppercase;
+}
+
+.todosTitleAdd {
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.todosSubtitle {
+  color: var(--color-indigo);
 }
