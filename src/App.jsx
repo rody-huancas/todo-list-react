@@ -2,7 +2,9 @@ import TodoApp from "./components/todoApp";
 function App() {
   return (
     <>
-      <h1 className="todoTitleHeader">Lista de Tareas</h1>
+      <h1 className="todoTitleHeader">
+        Lista de <span className="todosSubtitle">Tareas</span>
+      </h1>
       <TodoApp />
     </>
   );
