@@ -34,13 +34,13 @@ const FormEdit = ({ item, onUpdate, setIsEdit }) => {
           value={newValue}
         />
         <button
-          className="button todoButtonEdit"
+          className="todoButton todoButtonEdit"
           onClick={handleClickUpdateTodo}
         >
           <RiSaveLine /> Actualizar
         </button>
         <button
-          className="button todoButtonDelete"
+          className="todoButton todoButtonDelete"
           onClick={handleClickCancelTodo}
         >
           <GiCancel /> Cancelar

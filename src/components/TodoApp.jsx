@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Todo from "./Todo";
 
 const TodoApp = () => {
   const [title, setTitle] = useState("");
   const [todos, setTodos] = useState([]);
+  const [validation, setValidation] = useState(true);
+
+  // Cargar los datos de localStorage al cargar la página
+  useEffect(() => {
+    const savedTodos = JSON.parse(localStorage.getItem("todos"));
+    if (savedTodos) {
+      setTodos(savedTodos);
+    }
+  }, []);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -20,11 +29,22 @@ const TodoApp = () => {
       completed: false,
     };
 
+    if (title === "") {
+      setValidation(false);
+      setTimeout(() => {
+        setValidation(true);
+      }, 4000);
+      return;
+    }
+
     const temp = [...todos];
     temp.unshift(newTodo);
 
     setTodos(temp);
     setTitle("");
+
+    // Guardar los datos en localStorage
+    localStorage.setItem("todos", JSON.stringify(temp));
   };
 
   const handelUpdate = (id, value) => {
@@ -32,17 +52,28 @@ const TodoApp = () => {
     const item = temp.find((item) => item.id === id);
     item.title = value;
     setTodos(temp);
+
+    // Guardar los datos en localStorage
+    localStorage.setItem("todos", JSON.stringify(temp));
   };
 
   const handleDelete = (id) => {
     const temp = todos.filter((item) => item.id !== id);
 
     setTodos(temp);
+
+    // Guardar los datos en localStorage
+    localStorage.setItem("todos", JSON.stringify(temp));
   };
 
   return (
     <>
       <div className="todoContainer">
+        {validation ? (
+          ""
+        ) : (
+          <p className="todoError">Error!, Debes ingresar una tarea</p>
+        )}
         <form className="todoCreateForm" onSubmit={handleSubmit}>
           <input
             onChange={handleChange}

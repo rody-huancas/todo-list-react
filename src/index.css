@@ -19,13 +19,21 @@ body {
   font-family: var(--font-roboto);
 }
 
+.todoTitleHeader {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-text);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
 .todoContainer {
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .todoCreateForm {
@@ -65,7 +73,10 @@ body {
 .todosContainer {
   width: 43.75rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
 }
 
 .todo {
@@ -125,21 +136,23 @@ body {
 
 .todoUpdateInput {
   width: 18.75rem;
-  padding: 0.6rem;
+  padding: 0.6rem 0.2rem;
   font-size: 1rem;
   font-weight: 700;
-  border-radius: 0.4375rem;
   outline: none;
   color: var(--color-text);
-  border: 0.125rem solid var(--color-border);
+  border: none;
+  border-bottom: 2px solid var(--color-border);
   font-family: var(--font-roboto);
 }
 
-.button {
-  display: flex;
-  gap: 0.6rem;
-  padding: 0.7rem 1rem;
-  border-radius: 0.4375rem;
+.todoError {
+  width: 40%;
+  background-color: var(--color-delete);
   color: var(--color-white);
-  transition: all 0.5s ease;
+  padding: 1rem 0;
+  text-align: center;
+  font-weight: 900;
+  border-radius: 0.625rem;
+  text-transform: uppercase;
 }
